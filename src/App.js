@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import Item from './Item';
 
 function App() {
+
+
+  const [monState, setMonState] = useState(10)
+  const modifyState = () => {
+    setMonState(20)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <p>React : Modifier le State d'un composant.</p>
+     <h1>Hello {monState}</h1>
+     <button onClick = {modifyState}> Change State </button>
     </div>
   );
 }
